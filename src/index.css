@@ -1,0 +1,29 @@
+
+@import 'tailwindcss';
+@import './theme.css';
+
+.contenedor__h1{
+  font-family: var(--heading-h1-font-family);
+  font-size: var(--heading-h1-font-size);
+  font-style: var(--heading-h1-font-style);
+  font-weight: var(--heading-h1-font-weight);
+  letter-spacing: var(--heading-h1-letter-spacing);
+  line-height: var(--heading-h1-line-height);
+  color: var(--color-primary);
+}
+
+.interpretes{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5rem;
+  padding: 2rem;
+}
+
+body{
+  background-color: rgb(206, 229, 229);
+}
+
+
+
+
+
