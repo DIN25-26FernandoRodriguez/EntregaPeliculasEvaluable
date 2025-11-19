@@ -5,6 +5,7 @@ function Peliculas() {
 
 return (
     <>
+    <h1 className="contenedor__h1">Peliculas destacadas</h1>
     
     {peliculas.map((pelicula) => //Recorrer películas
                 <Card

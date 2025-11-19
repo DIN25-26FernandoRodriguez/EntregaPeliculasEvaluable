@@ -1,34 +1,26 @@
 import Contenedor from "./features/Contenedor.jsx"
 import Interprete from "./pages/Interprete.jsx"
 import Peliculas from "./pages/Peliculas.jsx"
-
+import { Routes } from "react-router-dom"
+import {Route} from "react-router-dom"
+import Inicio from "./Inicio.jsx"
+import Admin from "./pages/Admin.jsx"
+import NavBar from "./features/NavBar.jsx" 
+import "./assets/styles/index.css";
 function App() {
   return (
     <>
-      <h1 className="contenedor__h1">Mis Intérpretes</h1>
-      <h2 className="titulo2">Listado de intérpretes disponibles:</h2>
-      <Contenedor>
-        {/* Centrar todas las tarjetas en el centro */}
-        <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            <NavBar></NavBar>
 
-            {/* MOSTRAR INTÉRPETES */}
-            {/*  */}
+            <Contenedor>
+              <Routes>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/peliculas" element={<Peliculas />} />
+                <Route path="/interprete" element={<Interprete />} />
+                <Route path="/admin" element={<Admin />} />
+              </Routes>
+            </Contenedor>
 
-            {/* MOSTRAR PELÍCULAS */}
-          <Interprete>
-            
-          </Interprete>
-
-          <Peliculas>
-            
-          </Peliculas>
-
-
-
-          </div>
-        </div>
-      </Contenedor>
     </>
   )
 }
