@@ -1,25 +1,31 @@
-import Contenedor from "./features/Contenedor.jsx"
-import Interprete from "./pages/Interprete.jsx"
-import Peliculas from "./pages/Peliculas.jsx"
 import { Routes } from "react-router-dom"
-import {Route} from "react-router-dom"
-import Inicio from "./Inicio.jsx"
-import Admin from "./pages/Admin.jsx"
-import NavBar from "./features/NavBar.jsx" 
-import "./assets/styles/index.css";
+import { Route } from "react-router-dom"
+import Navbar from "./components/Navbar.jsx"
+
+import Contenedor from "./components/Contenedor.jsx"
+import Interprete from "./pages/Interprete.jsx"
+import Pelicula from "./pages/Peliculas.jsx"
+import Inicio from "./pages/Inicio";
+import Admin from "./pages/Admin";
+import DetallePelicula from "./pages/DetallePelicula.jsx"
+import DetalleInterprete from "./pages/DetalleInterprete.jsx"
+
 function App() {
   return (
     <>
-            <NavBar></NavBar>
 
-            <Contenedor>
-              <Routes>
-                <Route path="/" element={<Inicio />} />
-                <Route path="/peliculas" element={<Peliculas />} />
-                <Route path="/interprete" element={<Interprete />} />
-                <Route path="/admin" element={<Admin />} />
-              </Routes>
-            </Contenedor>
+      <Navbar></Navbar>
+
+      <Contenedor>
+        <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/interpretes" element={<Interprete />} />
+        <Route path="/interpretes/:id" element={<DetalleInterprete />} />
+        <Route path="/peliculas" element={<Pelicula />} />
+        <Route path="/peliculas/:id" element={<DetallePelicula />} />
+        <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </Contenedor>
 
     </>
   )

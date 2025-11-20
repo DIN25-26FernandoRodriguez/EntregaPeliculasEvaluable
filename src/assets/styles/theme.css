@@ -1,7 +1,14 @@
-/*AQUÍ NO PONGO EL @import PORQUE ESTOY USANDO LA FUENTE DE ARIAL, 
-YA QUE YA VIENE INSTALADA EN TODOS LOS SISTEMAS OPERATIVOS Y NO ES UNA FUENTE EXTERNA*/
+
 
 :root {
+
+  --colorNavBar: rgb(96, 114, 97);
+
+  --colorCard: rgb(122, 128, 122);
+
+  --colorTextCard: rgb(235, 235, 235);
+
+
     /*Black colors*/
   --color-black-1: rgba(0, 0, 0, 1);
   --color-black-2: rgba(29, 29, 29, 1);

@@ -1,7 +1,5 @@
+@import "tailwindcss";
 @import "./theme.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .contenedor__h1{
   font-family: var(--heading-h1-font-family);
@@ -15,8 +13,10 @@
 }
 
 body{
-  background-color: beige;
+  background-color: rgb(159, 168, 159);
 }
+
+
 
 .titulo2{
 text-align: center;

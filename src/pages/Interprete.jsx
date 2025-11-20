@@ -1,28 +1,28 @@
-import peliculas from "../data/peliculas.js"
-import Card from "../features/Card"
+import peliculas from "../data/peliculas"
+import Card from "../components/Card.jsx"
 
 function Interprete() {
-
-return (
+  return (
     <>
+      <div>
+        <h1 className="text-4xl font-bold text-center mt-10 mb-6">Intérpretes Destacados</h1>
+      </div>
 
-    <div>
-      <h1 className="contenedor__h1">Interpretes destacados</h1>
-    </div>
-    
-    {peliculas.map((pelicula) => //Recorrer películas
-              pelicula.actores.map((actor, index) => //Recorrer cada actor
-                <Card
-                  key={index}
-                  nombre={actor.nombre}
-                  foto={actor.imagen} >
-                  {actor.biografia}
-                </Card>
-              ))}
+      <div className="w-full mx-auto px-4 flex flex-wrap gap-6 justify-center">
+      {peliculas.map((pelicula) => 
+        pelicula.actores.map((actor, index) =>
+          <Card
+            key={index}
+            nombre={actor.nombre}
+            foto={actor.imagen}
+            to={`/interpretes/${index}`} >
+            {actor.biografia}
+          </Card>
+        ))}
+        </div>
     </>
-)
+  )
 
 }
 
 export default Interprete
-
