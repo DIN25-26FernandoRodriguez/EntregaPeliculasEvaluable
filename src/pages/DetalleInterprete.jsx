@@ -6,10 +6,10 @@ function DetalleInterprete() {
   const index = parseInt(id);
 
   //Buscar películas del intérprete (Cambiar comentario porque es de IA)
- 
   const todosLosActores = peliculas.flatMap(p => p.actores);
   const interprete = todosLosActores[index]
 
+  
   const peliculasDelActor = peliculas.filter(p =>p.actores.includes(interprete));
 
   return (
@@ -18,14 +18,12 @@ function DetalleInterprete() {
 
       <main className="w-full mx-auto px-4 text-center">
 
-        {/* Imagen debajo del título  (Cambiar comentario porque es de IA)*/} 
         <img
           src={interprete.imagen}
           alt={interprete.nombre}
-          className="w-80 h-90 object-cover rounded-2xl mb-6 mx-auto" //mx-auto para centrar imagen (Cambiar comentario porque es de IA)
+          className="w-80 h-90 object-cover rounded-2xl mb-6 mx-auto" 
         />
 
-        {/* Nombre arriba (Cambiar comentario porque es de IA) */}
         <h1 className="text-4xl font-bold mb-6">{interprete.nombre}</h1>
 
 

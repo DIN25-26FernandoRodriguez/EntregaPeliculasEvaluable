@@ -1,6 +1,7 @@
 // 1. Importa la imagen desde su ubicación en tu proyecto.
 // (Asegúrate de cambiar la ruta si tu imagen está en otra carpeta)
 
+// Panel de administración en construcción
 function Admin(){
     
     return(
@@ -8,11 +9,11 @@ function Admin(){
             <h1 className="text-4xl font-bold text-center mt-10">Panel de administración</h1>
             <p className="text-center mt-4 mb-8">EN PROCESO DE CONSTRUCCIÓN.</p>
             
-            {/* 2. Etiqueta <img> para mostrar la imagen */}
+            {/* 2. Etiqueta <img> para mostrar una imagen en construcción */}
             <img 
                 src="src/assets/images/descarga.png"
                 alt="En construcción: Obreros y conos de seguridad" 
-                className="max-w-xs md:max-w-md lg:max-w-lg w-full h-auto" // Clases para asegurar que la imagen es responsive
+                className="max-w-xs md:max-w-md lg:max-w-lg w-full h-auto" 
             />
         </div>
     )

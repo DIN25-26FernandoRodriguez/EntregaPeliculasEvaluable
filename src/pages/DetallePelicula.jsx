@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import peliculas from "../data/peliculas"
 import Card from '../components/Card';
+import peliculas from "../data/peliculas"
 
 function DetallePelicula() {
   const { id } = useParams();
@@ -9,16 +9,15 @@ function DetallePelicula() {
   return (
     <div>
       <h1 className="text-4xl font-bold text-center mt-10 mb-6">Detalles de la Película</h1>
-      {/* <p className="text-center">ID de la película: {id}</p> */}
 
 
       <main className="w-full mx-auto px-4 text-center">
 
 
-        {/* Título arriba */}
+        
         <h1 className="text-4xl font-bold mb-6">{pelicula.nombre}</h1>
 
-        {/* Imagen debajo del título */}
+        
         <img
           src={pelicula.cartelera}
           alt={pelicula.nombre}
