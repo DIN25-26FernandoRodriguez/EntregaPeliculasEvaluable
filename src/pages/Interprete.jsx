@@ -5,11 +5,17 @@ import SearchBar from "../components/SearchBar.jsx";
 import { useMemo } from "react";
 
 function Interprete() {
-  
 
-const todosLosActores = peliculas.flatMap(p => p.actores);
+  const todosLosActores = peliculas.flatMap((pelicula) =>
+    pelicula.actores.map((actor, idInterprete) => ({
+      ...actor,
+      idPelicula: pelicula.id, 
+      idInterprete: idInterprete, 
+      esNota10: pelicula.nota === 10, 
+    }))
+  );
 
-const [searchTerm, setSearchTerm] = useState(""); // Declaro el estádo que se va a guardar
+  const [searchTerm, setSearchTerm] = useState(""); // Declaro el estádo que se va a guardar
 
   const filteredActores = useMemo(() => {
     if (!searchTerm) {
@@ -23,15 +29,14 @@ const [searchTerm, setSearchTerm] = useState(""); // Declaro el estádo que se v
     );
   }, [searchTerm]);
 
-
   return (
     <>
 
-<button>
-          <a href="/inicio" className="text-black-500 hover:underline mb-4 inline-bloc bg-[var(--colorNavBar)] p-2 rounded-2xl ">Volver al inicio</a>
-        </button>
+      <button>
+        <a href="/inicio" className="text-black-500 hover:underline mb-4 inline-bloc bg-[var(--colorNavBar)] p-2 rounded-2xl ">Volver al inicio</a>
+      </button>
 
-        <SearchBar
+      <SearchBar
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
         placeholder="Buscar actores por nombre.." />
@@ -41,7 +46,7 @@ const [searchTerm, setSearchTerm] = useState(""); // Declaro el estádo que se v
       </div>
 
       <div className="w-full mx-auto px-4 flex flex-wrap gap-6 justify-center">
-      {/* {
+        {/* {
         todosLosActores.map((actor, index) =>
           <Card
             key={index}
@@ -54,18 +59,18 @@ const [searchTerm, setSearchTerm] = useState(""); // Declaro el estádo que se v
         {filteredActores.length > 0 ? (
           filteredActores.map((actor, index) => (
             <Card
-            key={index}
-            nombre={actor.nombre}
-            foto={actor.imagen}
-            to={`/interpretes/${index}`} >
-            {actor.biografia}
-          </Card>
+              key={index}
+              nombre={actor.nombre}
+              foto={actor.imagen}
+              to={`/interpretes/${index}`} >
+              {actor.biografia}
+            </Card>
           ))
         ) : (
-        // Mensaje si no hay resultados
-        <p className="col-span-full text-center text-gray-500 p-4"> No se encontraron películas con el término `{searchTerm}`. </p>
+          // Mensaje si no hay resultados
+          <p className="col-span-full text-center text-gray-500 p-4"> No se encontraron películas con el término `{searchTerm}`. </p>
         )}
-        </div>
+      </div>
     </>
   )
 

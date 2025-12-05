@@ -4,7 +4,6 @@ import { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import { useMemo } from "react";
 
-
 function Pelicula() {
   const [searchTerm, setSearchTerm] = useState(""); // Declaro el estádo que se va a guardar
 
@@ -19,9 +18,6 @@ function Pelicula() {
       pelicula.nombre.toLowerCase().includes(lowerCaseSearchTerm)
     );
   }, [searchTerm]);
-
-
-
 
   return (
     <>
